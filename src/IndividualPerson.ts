@@ -1,7 +1,7 @@
 import { Person } from './Person'
 import { PersonTypeEnum } from './PersonTypeEnum'
 
-export class Individual extends Person {
+export class IndividualPerson extends Person {
     constructor(
         id: number,
         name: string,
