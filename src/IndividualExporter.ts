@@ -1,12 +1,8 @@
+import { Exporter } from './ExporterInterface'
 import { Person } from './Person'
-import { XmlExporter } from './XmlExporter'
 
-export class IndividualExporter extends XmlExporter {
-    constructor(person: Person) {
-        super()
-    }
-
-    printIndividual(finalPerson: Person): Person {
-        return finalPerson
+export class IndividualExporter implements Exporter<any> {
+    export(person: Person): any {
+        return 'INDIVIDUAL'
     }
 }

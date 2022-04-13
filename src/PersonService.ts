@@ -1,10 +1,9 @@
-import { Exporter } from './ExporterInterface'
 import { Person } from './Person'
+import { PersonExporterFactory } from './PersonExporterFactory'
 
-export class PersonService implements Exporter<any> {
-    export(person: Person) {
-        const finalPerson = person
-
-        return finalPerson
+export class PersonService {
+    exporter(person: Person): void {
+        const exporter = PersonExporterFactory.createExporter(person)
+        return exporter.export()
     }
 }
