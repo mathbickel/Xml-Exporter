@@ -17,5 +17,7 @@ const company = new CompanyPerson(
 )
 
 const personService = new PersonService()
-const personExported = personService.exporter(company)
-console.log(personExported)
+const companyPersonExported = personService.exporter(company)
+const individualPersonExported = personService.exporter(individual)
+console.log(companyPersonExported)
+console.log(individualPersonExported)
