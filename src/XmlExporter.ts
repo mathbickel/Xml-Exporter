@@ -1,15 +1,19 @@
 import { CompanyExporter } from './CompanyExporter'
 import { IndividualExporter } from './IndividualExporter'
 import { Person } from './Person'
+import { PersonService } from './PersonService'
+import { PersonTypeEnum } from './PersonTypeEnum'
 
-export class XmlExporter {
-    cnpj!: string
+export class XmlExporter extends PersonService {
+    constructor() {
+        super()
+    }
 
-    exportablePerson(person: Person): any {
-        if (person.getDoc() === this.cnpj) {
-            const ce = new CompanyExporter(person)
+    exportablePerson(finalPerson: Person): any {
+        if (finalPerson.getType() === PersonTypeEnum.COMPANY) {
+            const ce = new CompanyExporter(finalPerson)
         } else {
-            const ie = new IndividualExporter(person)
+            const ie = new IndividualExporter(finalPerson)
         }
     }
 }

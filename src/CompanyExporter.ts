@@ -1,9 +1,12 @@
 import { Person } from './Person'
+import { XmlExporter } from './XmlExporter'
 
-export class CompanyExporter {
-    constructor(person: Person) {}
+export class CompanyExporter extends XmlExporter {
+    constructor(person: Person) {
+        super()
+    }
 
-    printCompany(): string {
-        return 'Company Exporter'
+    printCompany(finalPerson: Person): Person {
+        return finalPerson
     }
 }

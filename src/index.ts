@@ -1,23 +1,8 @@
+import { CompanyExporter } from './CompanyExporter'
 import { CompanyPerson } from './CompanyPerson'
 import { IndividualPerson } from './IndividualPerson'
-import { Person } from './Person'
 import { PersonService } from './PersonService'
 import { XmlExporter } from './XmlExporter'
-
-type PersonExported = [
-    | {
-          id: number
-          name: string
-          fantasyName?: string
-          cnpj?: string
-      }
-    | {
-          id: number
-          name: string
-          birthday?: Date
-          cpf?: string
-      }
-]
 
 const individual = new IndividualPerson(
     1,
@@ -34,11 +19,8 @@ const company = new CompanyPerson(
 )
 
 const personService = new PersonService()
-
-function toPerson(): PersonExported {
-    const exported = personService.export(company)
-    return exported
-}
-// let exportedPerson: Person =
-const xmlExporter = new XmlExporter()
-// xmlExporter.exportablePerson(exportedPerson)
+const personType = personService.export(company)
+const exporter = new XmlExporter()
+const companyExporter = new CompanyExporter(personType)
+companyExporter.printCompany(personType)
+console.log(companyExporter)

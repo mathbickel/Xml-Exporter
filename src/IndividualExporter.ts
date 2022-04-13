@@ -1,9 +1,12 @@
 import { Person } from './Person'
+import { XmlExporter } from './XmlExporter'
 
-export class IndividualExporter {
-    constructor(person: Person) {}
+export class IndividualExporter extends XmlExporter {
+    constructor(person: Person) {
+        super()
+    }
 
-    printIndividual(): string {
-        return 'Individual Exporter'
+    printIndividual(finalPerson: Person): Person {
+        return finalPerson
     }
 }
