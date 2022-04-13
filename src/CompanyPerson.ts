@@ -5,13 +5,17 @@ export class CompanyPerson extends Person {
     constructor(
         id: number,
         name: string,
-        doc: string,
-        protected fantasyNane: string
+        protected fantasyNane: string,
+        protected cnpj: string
     ) {
         super(id, name, PersonTypeEnum.COMPANY)
     }
 
-    getDoc(): void {
-        throw new Error('Method not implemented.')
+    getFantasyName(): string {
+        return this.fantasyNane
+    }
+
+    getDoc(): string {
+        return this.cnpj
     }
 }

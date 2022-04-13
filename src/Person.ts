@@ -19,5 +19,5 @@ export abstract class Person {
         return this.type
     }
 
-    abstract getDoc(): void
+    abstract getDoc(): string
 }
