@@ -1,5 +1,6 @@
 import { CompanyPerson } from './CompanyPerson'
 import { IndividualPerson } from './IndividualPerson'
+import { PersonService } from './PersonService'
 
 const individual = new IndividualPerson(
     1,
@@ -14,3 +15,7 @@ const company = new CompanyPerson(
     'Dooca LTDA',
     '90.660.638/0001-41'
 )
+
+const personService = new PersonService()
+const personExported = personService.exporter(company)
+console.log(personExported)
