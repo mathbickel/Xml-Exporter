@@ -5,13 +5,17 @@ export class IndividualPerson extends Person {
     constructor(
         id: number,
         name: string,
-        doc: string,
-        protected birthday: Date
+        protected birthday: Date,
+        protected cpf: string
     ) {
         super(id, name, PersonTypeEnum.INDIVIDUAL)
     }
 
-    getDoc(): void {
-        throw new Error('Method not implemented.')
+    getBirthday(): Date {
+        return this.birthday
+    }
+
+    getDoc(): string {
+        return this.cpf
     }
 }

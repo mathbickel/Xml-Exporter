@@ -3,6 +3,8 @@ import { Person } from './Person'
 
 export class PersonService implements Exporter<any> {
     export(person: Person) {
-        return 'teste'
+        const finalPerson = person
+
+        return finalPerson
     }
 }
