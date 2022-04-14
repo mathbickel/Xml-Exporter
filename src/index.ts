@@ -1,6 +1,5 @@
 import { CompanyPerson } from './CompanyPerson'
 import { IndividualPerson } from './IndividualPerson'
-import { PersonExporterFactory } from './PersonExporterFactory'
 import { PersonService } from './PersonService'
 
 const individual = new IndividualPerson(
